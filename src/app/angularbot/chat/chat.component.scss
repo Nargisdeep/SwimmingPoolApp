@@ -1,0 +1,56 @@
+.message {
+    border-radius: 50px;
+    margin: 10px 15px 20px;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 20px;
+  }
+  .message.to {
+    background-color: #2a6ba5;
+    color: #fff;
+    margin-left: 100px;
+    text-align: right;
+  }
+  .message.from {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-right: 100px;
+  }
+  .message.to + .message.to,
+  .message.from + .message.from {
+    margin-top: -10px;
+}
+button {
+    margin:20px 0px 20px 0px;
+    float: right;
+    padding:10px 30px 10px 30px ;
+  }
+  button-active {
+    background-color: #9b4dca;
+    color: white;
+  }
+  button-active:hover,
+  button-active:focus {
+    background-color: #9b4dca;
+    border-color: #9b4dca;
+    color: #fff;
+  }
+  .top-bar {
+    margin: 150px 0;
+  }
+.parent{
+
+    width:700px;
+    display:flex;
+    flex-direction: column;
+    margin:10px 10px 10px 10px;
+    
+    
+}
+.mainparent{
+    display:flex;
+    justify-content: center;
+    border:1px solid black;
+    border-radius: 20px;
+    
+}

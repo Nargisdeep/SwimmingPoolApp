@@ -1,0 +1,43 @@
+
+<div class="all-users-table">
+    <div class="heading">
+        <h4>All Active Members </h4><div class="spacer"></div>
+
+       <div class="buttonsr">
+
+    <button mat-mini-fab type="button" color="accent" class="actions" (click)="playAlarm()"><mat-icon>add_alert</mat-icon></button>
+    <button mat-mini-fab type="button" color="accent" class="actions" (click)="stopAlarm()"><mat-icon>alarm_off</mat-icon></button>
+  </div>
+  </div>
+    <table class="table" > 
+    <thead>
+      <tr>
+        <th scope="col"(click)="getMembersDataDashboard()">Member Name</th>
+        <th scope="col">Member Email</th>
+        <th scope="col">Starting Time</th>
+        <th scope="col">Ending Time</th>
+        <th scope="col">Actions</th>
+        <th scope="col">Show Time</th>
+        
+
+
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of members" >
+        <th scope="row">{{item.mainmember}}</th>
+        <td (click)="getMembersDataDashboard()">{{item.mainemail}}</td>
+        <td>{{onTimeChange(item.starttime)}}</td>
+        <td>{{onTimeChange(item.endtime)}}</td>
+        
+        <td>
+            <button mat-mini-fab type="button" color="accent" class="actions" (click)="openDialog('0ms','0ms',item._id)"><mat-icon>delete</mat-icon></button>
+            <button mat-mini-fab type="button" color="accent" class="actions" (click)="openDialog2(item._id)"><mat-icon>mode_edit</mat-icon></button>
+            
+       </td>
+       <td><button mat-raised-button type="button" color="accent" (click)="openDialog3(item._id,item.mainmember,item.starttime,item.endtime,item.numofmales,item.numoffemales,item.mainemail,item.mainmobile,item.memAddress)">Show Time</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,170 @@
+
+<div class="container mt-4">
+    <div class="register-admin-form m-3 p-4" >
+       <form [formGroup]="registrationForm">
+        <h4>Admin's Description</h4>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <img src={{adimage}} alt="I am Bhanu">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    
+                    <label>Pool Name</label><br/>
+                    <input type="text" name="poolname" formControlName="poolname" class="form-control" placeholder="Pool name"/>
+                        <!-- <div *ngIf=" submitted && err.poolname.errors">
+                            <div
+                            *ngIf="err.poolname.errors?.required">
+                             Required!
+                            </div>
+                        </div> -->
+                </div>
+                <div class="form-group">
+                    <label>Pool Location</label><br/>
+                    <input type="text" name="poollocation" formControlName="poollocation" class="form-control" placeholder="Pool Location"/>
+                        <!-- <div *ngIf=" submitted && err.poollocation.errors">
+                            <div
+                            *ngIf="err.poollocation.errors?.required">
+                              Required!
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Admin Name</label><br/>
+                    <input type="text" name="adminname" formControlName="adminname" class="form-control" placeholder="Admin Name">
+                    <!-- <div *ngIf=" submitted && err.adminname.errors">
+                        <div
+                        *ngIf="err.adminname.errors?.required">
+                          Required!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Admin User Name</label><br/>
+                    <input type="text" name="adminusername" formControlName="adminusername" class="form-control" placeholder="Admin User Name">
+                    <!-- <div *ngIf=" submitted && err.adminusername.errors">
+                        <div
+                        *ngIf="err.adminusername.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Admin Email</label><br/>
+                    <input type="text" name="admiemail" formControlName="adminemail" class="form-control" placeholder="Admin Email">
+                    <!-- <div *ngIf=" submitted && err.adminemail.errors">
+                        <div
+                        *ngIf="err.adminemail.errors?.required">
+                          Enter a valid email!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Admin Mobile</label><br/>
+                    <input type="text" name="adminmobile" formControlName="adminmobile" class="form-control" placeholder="Admin Mobile NUmber">
+                    <!-- <div *ngIf=" submitted && err.adminmobile.errors">
+                        <div
+                        *ngIf="err.adminmobile.errors?.required">
+                            Required!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Admin Password</label><br/>
+                    <input type="password" name="adminpassword" formControlName="adminpassword" class="form-control" placeholder="Set a Password">
+                    <!-- <div *ngIf=" submitted && err.adminpassword.errors">
+                        <div
+                        *ngIf="err.adminpassword.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Pool Hourly Rate In Rupees</label><br/>
+                    <input type="number" name="poolhourlyrate" formControlName="poolhourlyrate" class="form-control" placeholder="hourly Rate in Rupees">
+                    <!-- <div *ngIf=" submitted && err.poolhourlyrate.errors">
+                        <div
+                        *ngIf="err.poolhourlyrate.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Gender</label><br/>
+                    <input type="text" name="gender" formControlName="gender" class="form-control" placeholder="gender">
+                    <!-- <div *ngIf=" submitted && err.poolhourlyrate.errors">
+                        <div
+                        *ngIf="err.poolhourlyrate.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Active or Not</label><br/>
+                    <input type="text" name="active" formControlName="active" class="form-control" placeholder="active">
+                    <!-- <div *ngIf=" submitted && err.poolhourlyrate.errors">
+                        <div
+                        *ngIf="err.poolhourlyrate.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+                
+                   
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Address</label><br/>
+                    <input type="text" name="adminaddress" formControlName="adminaddress" class="form-control" placeholder="Admin Address" >
+                    <!-- <div *ngIf=" submitted && err.adminaddress.errors">
+                        <div
+                        *ngIf="err.adminaddress.errors?.required">
+                        Required!
+                        </div>
+                    </div> -->
+                </div>
+    
+            </div>
+            <div class="col-md-6">
+                   <div class="form-group">
+                    <label>Deleted Or Not:</label><br/>
+                    <input type="text" name="deleted" formControlName="isDeleted" class="form-control" placeholder="Deleted or Not">
+                </div>
+            </div>
+            
+        </div>
+       </form>
+    </div>
+</div>
+

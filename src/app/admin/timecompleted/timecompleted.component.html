@@ -1,0 +1,63 @@
+<div mat-dialog-content>
+    <b>Member Name:</b>{{data.mainmember}}<br>
+    <p>                                        </p><br>
+    <b> Time Spent: </b>{{ (elapsedTime ) | minuteSeconds }}<br>
+     <p>                                        </p><br>
+    <b>Calculated Amount:</b> Rs. {{amount}}
+    </div>
+    <form *ngIf="updateET" [formGroup]="updateEndT" (ngSubmit)="updateEndTimeReal()">
+      <label>Enter New Edit Time</label><br/>
+      <div class="form-group" >
+        <input type="time" name="endtime"  class="form-control" formControlName="endtime"[ngClass]="{
+          'is-invalid':submitted && err.endtime.errors}"/><button type='submit' mat-button><i class="fa fa-check" aria-hidden="true"></i></button>
+        <div *ngIf=" submitted || err.endtime.touched && err.endtime.errors">
+          <div
+          *ngIf="err.endtime.errors?.required">
+           Required!
+          </div>
+      </div>
+      </div>
+    </form>
+    <div mat-dialog-actions class="actionbuttons">
+      <button mat-raised-button type="button" color="accent"  (click)="updateEndTime()">Continue</button>
+      <button mat-raised-button type="button" color="accent"  cdkFocusInitial (click)="onPauseAction()">Stop</button>
+      <button mat-raised-button type="button" color="accent"*ngIf="genInvoice" (click)="handlePdfGen()">Bill</button>
+      <button mat-raised-button type="button" color="accent" (click)="openDialog('0ms','0ms',data._id)">End</button>
+    </div>
+
+    <!-- <div *ngIf="genHTMLInvoice" id="print-section">
+      <h3>GO SWIM</h3>
+      <h4>{{data.poolname}}</h4>
+      <h5>BILL</h5>
+        <div>
+          <div>
+          <p>{{data.mainmember}}</p>
+          <p>{{data.mainemail}}</p>
+          <p>{{data.mainmobile}}</p>S
+          </div>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <th>Pool Name</th>
+              <th>Hourly Rate</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Total Time</th>
+              <th>Amount Payable</th>
+            </tr>
+            <tr>
+              <td>{{data.poolname}}</td>
+              <td>{{data.poolhourlyrate}}</td>
+              <td>{{data.starttime}}</td>
+              <td>{{data.endtime}}</td>
+              <td>{{(elapsedTime ) | minuteSeconds}}</td>
+              <td>Rs.{{amount}}</td>
+            </tr>
+            <tr>
+              <td>Amount Payable:Rs.{{amount}}</td>
+            </tr>
+          </table>
+        </div>
+    </div> -->
+    

@@ -1,0 +1,153 @@
+    <div class="container mt-4">
+      <div class="register-admin-form m-3 p-4" >
+         <form [formGroup]="adminSettings" (ngSubmit)="postOnUpdate()">
+          <h4>Edit Your Details</h4>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Pool Name</label><br/>
+                      <input type="text" name="poolname" formControlName="poolname" class="form-control" [ngClass]="{
+                          'is-invalid':submitted && err.poolname.errors}"/>
+                          <div *ngIf=" submitted && err.poolname.errors">
+                              <div
+                              *ngIf="err.poolname.errors?.required">
+                               Required!
+                              </div>
+                          </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Pool Location</label><br/>
+                      <input type="text" name="poollocation" formControlName="poollocation" class="form-control" [ngClass]="{
+                          'is-invalid':submitted && err.poollocation.errors}"/>
+                          <div *ngIf=" submitted && err.poollocation.errors">
+                              <div
+                              *ngIf="err.poollocation.errors?.required">
+                                Required!
+                              </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Admin Name</label><br/>
+                      <input type="text" name="adminname" formControlName="adminname" class="form-control" placeholder="Admin Name"  [ngClass]="{
+                          'is-invalid':submitted && err.adminname.errors}">
+                      <div *ngIf=" submitted && err.adminname.errors">
+                          <div
+                          *ngIf="err.adminname.errors?.required">
+                            Required!
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Admin User Name</label><br/>
+                      <input type="text" name="adminusername" formControlName="adminusername" class="form-control" placeholder="Admin User Name"   [ngClass]="{
+                          'is-invalid':submitted && err.adminusername.errors}">
+                      <div *ngIf=" submitted && err.adminusername.errors">
+                          <div
+                          *ngIf="err.adminusername.errors?.required">
+                          Required!
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Admin Email</label><br/>
+                      <input type="text" name="admiemail" formControlName="adminemail" class="form-control" placeholder="Admin Email"   [ngClass]="{
+                          'is-invalid':submitted && err.adminemail.errors}">
+                      <div *ngIf=" submitted && err.adminemail.errors">
+                          <div
+                          *ngIf="err.adminemail.errors?.required">
+                            Enter a valid email!
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Admin Mobile</label><br/>
+                      <input type="text" name="adminmobile" formControlName="adminmobile" class="form-control" placeholder="Admin Mobile NUmber"   [ngClass]="{
+                          'is-invalid':submitted && err.adminmobile.errors}">
+                      <div *ngIf=" submitted && err.adminmobile.errors">
+                          <div
+                          *ngIf="err.adminmobile.errors?.required">
+                              Required!
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-check">
+                      <label for="gender">Gender:</label>
+                    <div>
+                          <input id="male" type="radio" value="male" name="gender" formControlName="gender"  [ngClass]="{
+                              'is-invalid':submitted && err.gender.errors}">
+                          <label for="male">Male</label>
+                    </div>
+    
+                      <div>
+                          <input id="female" type="radio" value="female" name="gender" formControlName="gender"  [ngClass]="{
+                              'is-invalid':submitted && err.gender.errors}">
+                          <label for="female">Female</label>
+                      </div>
+                      <div *ngIf=" submitted && err.gender.errors">
+                          <div
+                          *ngIf="err.gender.errors?.required">
+                          Required!
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Pool Hourly Rate</label><br/>
+                    <input type="number" name="poolhourlyrate" formControlName="poolhourlyrate" class="form-control"  placeholder="hourly Rate in Rupees" [readonly]="pertoedithourlyratebool"  [ngClass]="{
+                        'is-invalid':submitted && err.poolhourlyrate.errors}">
+                    <div *ngIf=" submitted && err.poolhourlyrate.errors">
+                        <div
+                        *ngIf="err.poolhourlyrate.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Admin Address</label><br/>
+                      <input type="text" name="adminaddress" formControlName="adminaddress" class="form-control" placeholder="Admin Address"   [ngClass]="{
+                          'is-invalid':submitted && err.adminaddress.errors}">
+                      <div *ngIf=" submitted && err.adminaddress.errors">
+                          <div
+                          *ngIf="err.adminaddress.errors?.required">
+                          Required!
+                          </div>
+                      </div>
+                  </div>
+      
+              </div>
+              
+          </div>
+          
+          <Button  class="submitbutton" type="submit">
+              Submit
+          </Button> 
+         </form>
+      </div>
+    </div>
+
+    

@@ -1,0 +1,46 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                  <div class="panel border bg-white">
+                    <div class="panel-heading">
+                       <h3 class="pt-3 font-weight bold">SIGN IN</h3>
+                    </div>
+                    <div class="panel-body">
+                         <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [ngClass]="{
+                                    'is-invalid':submitted && err.email.errors}">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input type="email" formControlName="email" placeholder="Enter your Email" >
+                                </div>
+                                <div *ngIf="submitted && err.email.errors">
+                                    <div
+                                    *ngIf="err.email.errors?.required">
+                                     Required!
+                                    </div>
+                                </div>   
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [ngClass]="{
+                                    'is-invalid':submitted && err.password.errors}">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input [type]="type" formControlName="password" placeholder="Enter your Password">
+                                    <span (click)="hideOrShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                                <div *ngIf=" submitted && err.password.errors">
+                                    <div
+                                    *ngIf="err.password.errors?.required">
+                                     Required!
+                                    </div>
+                                </div>
+                            </div>
+                             <button type="submit" class="btn btn-primary btn-block mt-4 ">SIGN IN </button>
+                            <div [ngStyle]="{'color':'red'}">{{error}}</div>
+                         </form>
+                    </div>
+                  </div>
+           </div>
+        </div>
+    </div>
+</div>

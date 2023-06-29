@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+    <div class="IamImage">
+        <img src={{data.image}} alt="I am Image" class="mat-elevation-z8">
+    </div>
+    <div class="content">
+        <h6><b>Admin Name:</b>{{data.name}}</h6>
+        <h6><b>Pool Hourly Rate:</b>Rs.{{data.hourlyrate}}</h6>
+        <button type="button" class="btn btn-primary btn-block mt-4 " (click)="verifyPassword(data.id)">Reset Password</button>
+    </div>
+    
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button mat-raised-button mat-dialog-close (click)="handleSettings(data.id)">Edit</button>
+      <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+    </div>

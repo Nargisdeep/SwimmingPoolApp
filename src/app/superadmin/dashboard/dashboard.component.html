@@ -1,0 +1,30 @@
+
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let admin of admins">
+        <mat-card class="card">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image" >
+
+              </div>
+              <mat-card-title>{{admin.adminname}}</mat-card-title>
+              <mat-card-subtitle>Admin</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="mat-elevation-z8" src={{admin.adminimage}} alt="Photo of Admin">
+            <mat-card-content>
+              <h6>Pool Name:{{admin.poolname}}</h6>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-mini-fab class="actions" color="basic" (click)="handleAction(admin._id,'delete')" matTooltip="Delete Admin"
+              matTooltipClass="example-tooltip-uppercase"
+              aria-label="Button that shows a red tooltip"><mat-icon>delete</mat-icon></button>
+              <button mat-mini-fab class="actions"  color="basic" (click)="handleAction(admin._id,'edit')" matTooltip="Edit Admin"
+              matTooltipClass="example-tooltip-uppercase"
+              aria-label="Button that shows a red tooltip"><mat-icon>mode_edit</mat-icon></button>
+              <button mat-mini-fab class="actions"  color="basic" (click)="handleAction(admin._id,'admindescription')" matTooltip="Person Description"
+              matTooltipClass="example-tooltip-uppercase"
+              aria-label="Button that shows a red tooltip" ><mat-icon>person</mat-icon></button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+

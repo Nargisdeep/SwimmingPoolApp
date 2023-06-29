@@ -1,0 +1,41 @@
+<div class="all-users-table">
+    <div class="heading">
+        <h6>All Admins </h6>
+    </div>
+    
+<table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Admin Name</th>
+        <th scope="col">Admin Email</th>
+        <th scope="col">Admin Mobile Number</th>
+        <th scope="col">Active</th>
+        <th scope="col">Can Edit</th>
+
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of admins" >
+        <th scope="row">{{item.adminname}}</th>
+        <td>{{item.adminemail}}</td>
+        <td>{{item.adminmobile}}</td>
+        <td>{{item.active}}</td>
+        <td>{{item.pertoedithourlyrate}}</td>
+        <td><form class="action-form" [formGroup]="actions" (ngSubmit)="postActions(item._id)" ngNativeValidate>
+          <mat-slide-toggle formControlName="beActive"matTooltip="User is active or not"
+          matTooltipClass="example-tooltip-uppercase"
+          aria-label="Button that shows a red tooltip">Active</mat-slide-toggle>
+          <mat-slide-toggle formControlName="canEdit" matTooltip="Permission to edit Hourly Rate"
+          matTooltipClass="example-tooltip-uppercase"
+          aria-label="Button that shows a red tooltip">Can Edit</mat-slide-toggle>
+          
+
+        
+          <button mat-raised-button type="submit" color="accent">Save</button>
+        </form></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

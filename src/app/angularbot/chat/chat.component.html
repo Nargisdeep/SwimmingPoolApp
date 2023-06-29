@@ -1,0 +1,30 @@
+<div class="mainparent">
+   
+<div class="parent">
+    <div>
+        <div class="heading">
+       <h4>Hello,{{role}}   {{log.name}}</h4>
+        </div>
+        
+    </div>
+
+
+
+    <ng-container *ngFor="let message of messages">
+        <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+          {{ message.content }}
+        </div>
+      </ng-container>
+      <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Ask You Queries Here</label>
+      <div class="form-group">
+        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text"  class="form-control"/>
+      </div>
+      
+      <button class="btn btn-primary" (click)="sendMessage()">ASK</button>
+      <ng-template #dialogInfo>
+        <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+      </ng-template>
+
+
+</div>
+</div>

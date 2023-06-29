@@ -1,0 +1,27 @@
+
+mat-grid-tile {
+    margin-top:10px;
+    height:400px;
+    width:450px;
+}
+.card{
+    height:300px;
+    width:300px;
+    margin:10px 10px 10px 10px;
+}
+img{
+    border-radius:50%;
+    height:135px;
+    width:135px;
+    margin-left:85px;
+}
+.example-header-image {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBjnDRifcqlvTZDtagb6GAO6gG6R5q-DyC5hRGFGFvsg&s');
+    background-size: cover;
+}
+mat-card-content{
+    margin-top:10px;
+}
+.actions{
+    margin-left:10px;
+}

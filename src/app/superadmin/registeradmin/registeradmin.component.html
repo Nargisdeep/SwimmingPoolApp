@@ -1,0 +1,212 @@
+
+<div class="container mt-4">
+    <div class="register-admin-form m-3 p-4" >
+       <form [formGroup]="registrationForm" (ngSubmit)="postAdmin()">
+        <h4>Fill The details for Admin</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Pool Name*</label><br/>
+                    <input type="text" name="poolname" formControlName="poolname" class="form-control" placeholder="Pool Name" [ngClass]="{
+                        'is-invalid':submitted && err.poolname.errors}"/>
+                        <div *ngIf=" submitted && err.poolname.errors">
+                            <div
+                            *ngIf="err.poolname.errors?.required">
+                             Required!
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Pool Location*</label><br/>
+                    <input type="text" name="poollocation" formControlName="poollocation" class="form-control" placeholder="Pool Location" [ngClass]="{
+                        'is-invalid':submitted && err.poollocation.errors}"/>
+                        <div *ngIf=" submitted && err.poollocation.errors">
+                            <div
+                            *ngIf="err.poollocation.errors?.required">
+                              Required!
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Name*</label><br/>
+                    <input type="text" name="adminname" formControlName="adminname" class="form-control" placeholder="Admin Name"  [ngClass]="{
+                        'is-invalid':submitted && err.adminname.errors}">
+                    <div *ngIf=" submitted && err.adminname.errors">
+                        <div
+                        *ngIf="err.adminname.errors?.required">
+                          Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin User Name*</label><br/>
+                    <input type="text" name="adminusername" formControlName="adminusername" class="form-control" placeholder="Admin User Name"   [ngClass]="{
+                        'is-invalid':submitted && err.adminusername.errors}">
+                    <div *ngIf=" submitted && err.adminusername.errors">
+                        <div
+                        *ngIf="err.adminusername.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Email*</label><br/>
+                    <input type="text" name="admiemail" formControlName="adminemail" class="form-control" placeholder="Admin Email"   [ngClass]="{
+                        'is-invalid':submitted && err.adminemail.errors}">
+                    <div *ngIf=" submitted && err.adminemail.errors">
+                        <div
+                        *ngIf="err.adminemail.errors?.required">
+                          Required!
+                        </div>
+                        <div
+                        *ngIf="err.adminemail.errors?.pattern">
+                          Enter a valid email!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Mobile*</label><br/>
+                    <input type="text" name="adminmobile" formControlName="adminmobile" class="form-control" placeholder="Admin Mobile Number"   [ngClass]="{
+                        'is-invalid':submitted && err.adminmobile.errors}">
+                    <div *ngIf="  submitted || err.adminmobile.touched && err.adminmobile.errors">
+                        <div
+                        *ngIf="err.adminmobile.errors?.required">
+                            Required!
+                        </div>
+                        <div
+                        *ngIf="err.adminmobile.errors?.minlength">
+                            Mobile number should be of 10 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Password*</label><br/>
+                    <input type="password" name="adminpassword" formControlName="adminpassword" class="form-control" placeholder="Set a Password"   [ngClass]="{
+                        'is-invalid':submitted && err.adminpassword.errors}">
+                    <div *ngIf=" submitted && err.adminpassword.errors">
+                        <div
+                        *ngIf="err.adminpassword.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Pool Hourly Rate*</label><br/>
+                    <input type="number" name="poolhourlyrate" formControlName="poolhourlyrate" class="form-control" placeholder="Hourly Rate in Rupees"   [ngClass]="{
+                        'is-invalid':submitted && err.poolhourlyrate.errors}">
+                    <div *ngIf=" submitted && err.poolhourlyrate.errors">
+                        <div
+                        *ngIf="err.poolhourlyrate.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-check">
+                    <label for="gender">Gender*:</label>
+                  <div>
+                        <input id="male" type="radio" value="male" name="gender" formControlName="gender"  [ngClass]="{
+                            'is-invalid':submitted && err.gender.errors}">
+                        <label for="male">Male</label>
+                  </div>
+  
+                    <div>
+                        <input id="female" type="radio" value="female" name="gender" formControlName="gender"  [ngClass]="{
+                            'is-invalid':submitted && err.gender.errors}">
+                        <label for="female">Female</label>
+                    </div>
+                    <div *ngIf=" submitted && err.gender.errors">
+                        <div
+                        *ngIf="err.gender.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                   <div class="form-check">
+                    <label for="active">Active Or Not*:</label>
+                    <div>
+                          <input id="yes" type="radio" value="1" name="active" formControlName="active"  [ngClass]="{
+                            'is-invalid':submitted && err.active.errors}">
+                          <label for="yes">Yes</label>
+                    </div>
+    
+                      <div>
+                          <input id="no" type="radio" value="0" name="active" formControlName="active"  [ngClass]="{
+                            'is-invalid':submitted && err.active.errors}">
+                          <label for="no">No</label>
+                      </div>
+                      <div *ngIf=" submitted && err.active.errors">
+                        <div
+                        *ngIf="err.active.errors?.required">
+                           Required!
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Enter Admin Address*</label><br/>
+                    <input type="text" name="adminaddress" formControlName="adminaddress" class="form-control" placeholder="Admin Address"   [ngClass]="{
+                        'is-invalid':submitted && err.adminaddress.errors}">
+                    <div *ngIf=" submitted && err.adminaddress.errors">
+                        <div
+                        *ngIf="err.adminaddress.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-md-6">
+                   <div class="form-group">
+                    <label>Select Admin Image*</label><br/>
+                    <input type="file" name="adminimage" formControlName="adminimage" class="form-control" placeholder="Admin Image"   [ngClass]="{
+                        'is-invalid':submitted && err.adminimage.errors}">
+                    <div *ngIf=" submitted && err.adminimage.errors">
+                        <div
+                        *ngIf="err.adminimage.errors?.required">
+                        Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div [ngStyle]="{'color':'red'}">{{error}}</div>
+        <Button  class="submitbutton" type="submit">
+            Submit
+        </Button> 
+       </form>
+    </div>
+</div>
